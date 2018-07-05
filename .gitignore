@@ -1,0 +1,8 @@
+.DS_Store
+
+### Terraform ###
+# Compiled files
+*.tfstate
+*.tfstate.backup
+.terraform
+*.zip
