@@ -1,5 +1,5 @@
 resource "aws_waf_byte_match_set" "match_admin_url" {
-  name = "${var.env}-generic-match-admin-url"
+  name = "${var.waf_prefix}-generic-match-admin-url"
 
   byte_match_tuples {
     text_transformation   = "URL_DECODE"
@@ -13,7 +13,7 @@ resource "aws_waf_byte_match_set" "match_admin_url" {
 }
 
 resource "aws_waf_byte_match_set" "match_auth_tokens" {
-  name = "${var.env}-generic-match-auth-tokens"
+  name = "${var.waf_prefix}-generic-match-auth-tokens"
 
   byte_match_tuples {
     text_transformation   = "URL_DECODE"
@@ -39,7 +39,7 @@ resource "aws_waf_byte_match_set" "match_auth_tokens" {
 }
 
 resource "aws_waf_byte_match_set" "match_csrf_method" {
-  name = "${var.env}-generic-match-csrf-method"
+  name = "${var.waf_prefix}-generic-match-csrf-method"
 
   byte_match_tuples {
     text_transformation   = "LOWERCASE"
@@ -53,7 +53,7 @@ resource "aws_waf_byte_match_set" "match_csrf_method" {
 }
 
 resource "aws_waf_byte_match_set" "match_php_insecure_uri" {
-  name = "${var.env}-generic-match-php-insecure-uri"
+  name = "${var.waf_prefix}-generic-match-php-insecure-uri"
 
   byte_match_tuples {
     text_transformation   = "URL_DECODE"
@@ -77,7 +77,7 @@ resource "aws_waf_byte_match_set" "match_php_insecure_uri" {
 }
 
 resource "aws_waf_byte_match_set" "match_php_insecure_var_refs" {
-  name = "${var.env}-generic-match-php-insecure-var-refs"
+  name = "${var.waf_prefix}-generic-match-php-insecure-var-refs"
 
   byte_match_tuples {
     text_transformation   = "URL_DECODE"
@@ -161,7 +161,7 @@ resource "aws_waf_byte_match_set" "match_php_insecure_var_refs" {
 }
 
 resource "aws_waf_byte_match_set" "match_rfi_lfi_traversal" {
-  name = "${var.env}-generic-match-rfi-lfi-traversal"
+  name = "${var.waf_prefix}-generic-match-rfi-lfi-traversal"
 
   byte_match_tuples {
     text_transformation   = "HTML_ENTITY_DECODE"
@@ -245,7 +245,7 @@ resource "aws_waf_byte_match_set" "match_rfi_lfi_traversal" {
 }
 
 resource "aws_waf_byte_match_set" "match_ssi" {
-  name = "${var.env}-generic-match-ssi"
+  name = "${var.waf_prefix}-generic-match-ssi"
 
   byte_match_tuples {
     text_transformation   = "LOWERCASE"

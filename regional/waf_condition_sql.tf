@@ -1,7 +1,7 @@
-resource "aws_waf_xss_match_set" "xss_match_set" {
-  name = "${var.env}-generic-detect-xss"
+resource "aws_wafregional_sql_injection_match_set" "sql_injection_match_set" {
+  name = "${var.waf_prefix}-generic-detect-sqli"
 
-  xss_match_tuples {
+  sql_injection_match_tuple {
     text_transformation = "HTML_ENTITY_DECODE"
 
     field_to_match {
@@ -9,7 +9,7 @@ resource "aws_waf_xss_match_set" "xss_match_set" {
     }
   }
 
-  xss_match_tuples {
+  sql_injection_match_tuple {
     text_transformation = "URL_DECODE"
 
     field_to_match {
@@ -17,7 +17,7 @@ resource "aws_waf_xss_match_set" "xss_match_set" {
     }
   }
 
-  xss_match_tuples {
+  sql_injection_match_tuple {
     text_transformation = "HTML_ENTITY_DECODE"
 
     field_to_match {
@@ -25,7 +25,7 @@ resource "aws_waf_xss_match_set" "xss_match_set" {
     }
   }
 
-  xss_match_tuples {
+  sql_injection_match_tuple {
     text_transformation = "URL_DECODE"
 
     field_to_match {
@@ -33,7 +33,7 @@ resource "aws_waf_xss_match_set" "xss_match_set" {
     }
   }
 
-  xss_match_tuples {
+  sql_injection_match_tuple {
     text_transformation = "HTML_ENTITY_DECODE"
 
     field_to_match {
@@ -41,7 +41,7 @@ resource "aws_waf_xss_match_set" "xss_match_set" {
     }
   }
 
-  xss_match_tuples {
+  sql_injection_match_tuple {
     text_transformation = "URL_DECODE"
 
     field_to_match {
@@ -49,7 +49,7 @@ resource "aws_waf_xss_match_set" "xss_match_set" {
     }
   }
 
-  xss_match_tuples {
+  sql_injection_match_tuple {
     text_transformation = "HTML_ENTITY_DECODE"
 
     field_to_match {
@@ -58,7 +58,7 @@ resource "aws_waf_xss_match_set" "xss_match_set" {
     }
   }
 
-  xss_match_tuples {
+  sql_injection_match_tuple {
     text_transformation = "URL_DECODE"
 
     field_to_match {
