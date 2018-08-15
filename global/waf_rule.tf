@@ -1,6 +1,6 @@
 resource "aws_waf_rule" "detect_admin_access" {
-  name        = "${var.env}-generic-detect-admin-access"
-  metric_name = "${var.env}genericdetectadminaccess"
+  name        = "${var.waf_prefix}-generic-detect-admin-access"
+  metric_name = "${var.waf_prefix}genericdetectadminaccess"
 
   predicates {
     data_id = "${aws_waf_ipset.admin_remote_ipset.id}"
@@ -16,8 +16,8 @@ resource "aws_waf_rule" "detect_admin_access" {
 }
 
 resource "aws_waf_rule" "detect_bad_auth_tokens" {
-  name        = "${var.env}-generic-detect-bad-auth-tokens"
-  metric_name = "${var.env}genericdetectbadauthtokens"
+  name        = "${var.waf_prefix}-generic-detect-bad-auth-tokens"
+  metric_name = "${var.waf_prefix}genericdetectbadauthtokens"
 
   predicates {
     data_id = "${aws_waf_byte_match_set.match_auth_tokens.id}"
@@ -27,8 +27,8 @@ resource "aws_waf_rule" "detect_bad_auth_tokens" {
 }
 
 resource "aws_waf_rule" "detect_blacklisted_ips" {
-  name        = "${var.env}-generic-detect-blacklisted-ips"
-  metric_name = "${var.env}genericdetectblacklistedips"
+  name        = "${var.waf_prefix}-generic-detect-blacklisted-ips"
+  metric_name = "${var.waf_prefix}genericdetectblacklistedips"
 
   predicates {
     data_id = "${aws_waf_ipset.blacklisted_ips.id}"
@@ -38,8 +38,8 @@ resource "aws_waf_rule" "detect_blacklisted_ips" {
 }
 
 resource "aws_waf_rule" "detect_php_insecure" {
-  name        = "${var.env}-generic-detect-php-insecure"
-  metric_name = "${var.env}genericdetectphpinsecure"
+  name        = "${var.waf_prefix}-generic-detect-php-insecure"
+  metric_name = "${var.waf_prefix}genericdetectphpinsecure"
 
   predicates {
     data_id = "${aws_waf_byte_match_set.match_php_insecure_uri.id}"
@@ -55,8 +55,8 @@ resource "aws_waf_rule" "detect_php_insecure" {
 }
 
 resource "aws_waf_rule" "detect_rfi_lfi_traversal" {
-  name        = "${var.env}-generic-detect-rfi-lfi-traversal"
-  metric_name = "${var.env}genericdetectrfilfitraversal"
+  name        = "${var.waf_prefix}-generic-detect-rfi-lfi-traversal"
+  metric_name = "${var.waf_prefix}genericdetectrfilfitraversal"
 
   predicates {
     data_id = "${aws_waf_byte_match_set.match_rfi_lfi_traversal.id}"
@@ -66,8 +66,8 @@ resource "aws_waf_rule" "detect_rfi_lfi_traversal" {
 }
 
 resource "aws_waf_rule" "detect_ssi" {
-  name        = "${var.env}-generic-detect-ssi"
-  metric_name = "${var.env}genericdetectssi"
+  name        = "${var.waf_prefix}-generic-detect-ssi"
+  metric_name = "${var.waf_prefix}genericdetectssi"
 
   predicates {
     data_id = "${aws_waf_byte_match_set.match_ssi.id}"
@@ -77,8 +77,8 @@ resource "aws_waf_rule" "detect_ssi" {
 }
 
 resource "aws_waf_rule" "enforce_csrf" {
-  name        = "${var.env}-generic-enforce-csrf"
-  metric_name = "${var.env}genericenforcecsrf"
+  name        = "${var.waf_prefix}-generic-enforce-csrf"
+  metric_name = "${var.waf_prefix}genericenforcecsrf"
 
   predicates {
     data_id = "${aws_waf_byte_match_set.match_csrf_method.id}"
@@ -94,8 +94,8 @@ resource "aws_waf_rule" "enforce_csrf" {
 }
 
 resource "aws_waf_rule" "mitigate_sqli" {
-  name        = "${var.env}-generic-mitigate-sqli"
-  metric_name = "${var.env}genericmitigatesqli"
+  name        = "${var.waf_prefix}-generic-mitigate-sqli"
+  metric_name = "${var.waf_prefix}genericmitigatesqli"
 
   predicates {
     data_id = "${aws_waf_sql_injection_match_set.sql_injection_match_set.id}"
@@ -105,8 +105,8 @@ resource "aws_waf_rule" "mitigate_sqli" {
 }
 
 resource "aws_waf_rule" "mitigate_xss" {
-  name        = "${var.env}-generic-mitigate-xss"
-  metric_name = "${var.env}genericmitigatexss"
+  name        = "${var.waf_prefix}-generic-mitigate-xss"
+  metric_name = "${var.waf_prefix}genericmitigatexss"
 
   predicates {
     data_id = "${aws_waf_xss_match_set.xss_match_set.id}"
@@ -116,8 +116,8 @@ resource "aws_waf_rule" "mitigate_xss" {
 }
 
 resource "aws_waf_rule" "restrict_sizes" {
-  name        = "${var.env}-generic-restrict-sizes"
-  metric_name = "${var.env}genericrestrictsizes"
+  name        = "${var.waf_prefix}-generic-restrict-sizes"
+  metric_name = "${var.waf_prefix}genericrestrictsizes"
 
   predicates {
     data_id = "${aws_waf_size_constraint_set.size_restrictions.id}"

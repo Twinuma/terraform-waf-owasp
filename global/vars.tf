@@ -1,0 +1,1 @@
+variable "waf_prefix" {}

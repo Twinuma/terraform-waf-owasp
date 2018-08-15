@@ -1,5 +1,5 @@
-resource "aws_waf_size_constraint_set" "size_restrictions" {
-  name = "${var.env}-generic-size-restrictions"
+resource "aws_wafregional_size_constraint_set" "size_restrictions" {
+  name = "${var.waf_prefix}-generic-size-restrictions"
 
   size_constraints {
     text_transformation = "NONE"
@@ -43,8 +43,8 @@ resource "aws_waf_size_constraint_set" "size_restrictions" {
   }
 }
 
-resource "aws_waf_size_constraint_set" "csrf_token_set" {
-  name = "${var.env}-generic-match-csrf-token"
+resource "aws_wafregional_size_constraint_set" "csrf_token_set" {
+  name = "${var.waf_prefix}-generic-match-csrf-token"
 
   size_constraints {
     text_transformation = "NONE"
