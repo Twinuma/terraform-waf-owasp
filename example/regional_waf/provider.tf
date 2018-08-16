@@ -1,6 +1,6 @@
 provider "aws" {
-  region  = "us-east-1"
-  profile = "dev"
+  region  = "${var.region}"
+  profile = "${var.profile}"
 }
 
 provider "template" {}
