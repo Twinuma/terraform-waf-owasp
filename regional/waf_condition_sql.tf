@@ -66,4 +66,21 @@ resource "aws_wafregional_sql_injection_match_set" "sql_injection_match_set" {
       data = "cookie"
     }
   }
+
+  sql_injection_match_tuple {
+    text_transformation = "HTML_ENTITY_DECODE"
+
+    field_to_match {
+      data = "authorization"
+      type = "HEADER"
+    }
+  }
+  sql_injection_match_tuple {
+    text_transformation = "URL_DECODE"
+
+    field_to_match {
+      data = "authorization"
+      type = "HEADER"
+    }
+  }
 }
