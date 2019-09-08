@@ -75,6 +75,7 @@ resource "aws_wafregional_sql_injection_match_set" "sql_injection_match_set" {
       type = "HEADER"
     }
   }
+
   sql_injection_match_tuple {
     text_transformation = "URL_DECODE"
 

@@ -1,7 +1,12 @@
 variable "waf_prefix" {
-    type = "list"
+  type = list(string)
 }
+
 variable "blacklisted_ips" {
-    type = "list"
+  type = "list"
 }
-variable "admin_remote_ipset" {}
+
+variable "admin_remote_ipset" {
+  type = "list"
+}
+

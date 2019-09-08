@@ -12,7 +12,7 @@ resource "aws_wafregional_web_acl" "wafregional_acl" {
     }
 
     priority = 1
-    rule_id  = "${aws_wafregional_rule.restrict_sizes.id}"
+    rule_id  = aws_wafregional_rule.restrict_sizes.id
     type     = "REGULAR"
   }
 
@@ -22,7 +22,7 @@ resource "aws_wafregional_web_acl" "wafregional_acl" {
     }
 
     priority = 2
-    rule_id  = "${aws_wafregional_rule.detect_blacklisted_ips.id}"
+    rule_id  = aws_wafregional_rule.detect_blacklisted_ips.id
     type     = "REGULAR"
   }
 
@@ -32,7 +32,7 @@ resource "aws_wafregional_web_acl" "wafregional_acl" {
     }
 
     priority = 3
-    rule_id  = "${aws_wafregional_rule.detect_bad_auth_tokens.id}"
+    rule_id  = aws_wafregional_rule.detect_bad_auth_tokens.id
     type     = "REGULAR"
   }
 
@@ -42,7 +42,7 @@ resource "aws_wafregional_web_acl" "wafregional_acl" {
     }
 
     priority = 4
-    rule_id  = "${aws_wafregional_rule.mitigate_sqli.id}"
+    rule_id  = aws_wafregional_rule.mitigate_sqli.id
     type     = "REGULAR"
   }
 
@@ -52,7 +52,7 @@ resource "aws_wafregional_web_acl" "wafregional_acl" {
     }
 
     priority = 5
-    rule_id  = "${aws_wafregional_rule.mitigate_xss.id}"
+    rule_id  = aws_wafregional_rule.mitigate_xss.id
     type     = "REGULAR"
   }
 
@@ -62,7 +62,7 @@ resource "aws_wafregional_web_acl" "wafregional_acl" {
     }
 
     priority = 6
-    rule_id  = "${aws_wafregional_rule.detect_rfi_lfi_traversal.id}"
+    rule_id  = aws_wafregional_rule.detect_rfi_lfi_traversal.id
     type     = "REGULAR"
   }
 
@@ -72,7 +72,7 @@ resource "aws_wafregional_web_acl" "wafregional_acl" {
     }
 
     priority = 7
-    rule_id  = "${aws_wafregional_rule.detect_php_insecure.id}"
+    rule_id  = aws_wafregional_rule.detect_php_insecure.id
     type     = "REGULAR"
   }
 
@@ -82,7 +82,7 @@ resource "aws_wafregional_web_acl" "wafregional_acl" {
     }
 
     priority = 8
-    rule_id  = "${aws_wafregional_rule.enforce_csrf.id}"
+    rule_id  = aws_wafregional_rule.enforce_csrf.id
     type     = "REGULAR"
   }
 
@@ -92,7 +92,7 @@ resource "aws_wafregional_web_acl" "wafregional_acl" {
     }
 
     priority = 9
-    rule_id  = "${aws_wafregional_rule.detect_ssi.id}"
+    rule_id  = aws_wafregional_rule.detect_ssi.id
     type     = "REGULAR"
   }
 
@@ -102,7 +102,8 @@ resource "aws_wafregional_web_acl" "wafregional_acl" {
     }
 
     priority = 10
-    rule_id  = "${aws_wafregional_rule.detect_admin_access.id}"
+    rule_id  = aws_wafregional_rule.detect_admin_access.id
     type     = "REGULAR"
   }
 }
+
