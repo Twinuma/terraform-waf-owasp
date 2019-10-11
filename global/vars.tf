@@ -10,3 +10,6 @@ variable "admin_remote_ipset" {
   type = "list"
 }
 
+variable "rule_action" {
+  default = "BLOCK"
+}

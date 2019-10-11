@@ -3,6 +3,7 @@ module "regional_waf" {
   waf_prefix         = var.waf_prefix
   blacklisted_ips    = var.blacklisted_ips
   admin_remote_ipset = var.admin_remote_ipset
+  rule_action        = var.rule_action
 }
 
 # Use module.regional_waf.web_acl_id variable to create aws_wafregional_web_acl_association

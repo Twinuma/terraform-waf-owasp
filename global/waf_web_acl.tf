@@ -18,7 +18,7 @@ resource "aws_waf_web_acl" "waf_acl" {
 
   rules {
     action {
-      type = "BLOCK"
+      type = var.rule_action
     }
 
     priority = 2
@@ -28,7 +28,7 @@ resource "aws_waf_web_acl" "waf_acl" {
 
   rules {
     action {
-      type = "BLOCK"
+      type = var.rule_action
     }
 
     priority = 3
@@ -38,7 +38,7 @@ resource "aws_waf_web_acl" "waf_acl" {
 
   rules {
     action {
-      type = "BLOCK"
+      type = var.rule_action
     }
 
     priority = 4
@@ -48,7 +48,7 @@ resource "aws_waf_web_acl" "waf_acl" {
 
   rules {
     action {
-      type = "BLOCK"
+      type = var.rule_action
     }
 
     priority = 5
@@ -58,7 +58,7 @@ resource "aws_waf_web_acl" "waf_acl" {
 
   rules {
     action {
-      type = "BLOCK"
+      type = var.rule_action
     }
 
     priority = 6
@@ -68,7 +68,7 @@ resource "aws_waf_web_acl" "waf_acl" {
 
   rules {
     action {
-      type = "BLOCK"
+      type = var.rule_action
     }
 
     priority = 7
@@ -78,7 +78,7 @@ resource "aws_waf_web_acl" "waf_acl" {
 
   rules {
     action {
-      type = "BLOCK"
+      type = var.rule_action
     }
 
     priority = 8
@@ -88,7 +88,7 @@ resource "aws_waf_web_acl" "waf_acl" {
 
   rules {
     action {
-      type = "BLOCK"
+      type = var.rule_action
     }
 
     priority = 9
@@ -98,7 +98,7 @@ resource "aws_waf_web_acl" "waf_acl" {
 
   rules {
     action {
-      type = "BLOCK"
+      type = var.rule_action
     }
 
     priority = 10
