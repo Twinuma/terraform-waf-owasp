@@ -6,6 +6,20 @@ resource "aws_waf_web_acl" "waf_acl" {
     type = "ALLOW"
   }
 
+  logging_configuration {
+    log_destination = var.log_firehose_arn
+
+    redacted_fields {
+      dynamic "field_to_match" {
+        for_each = var.log_firehose_redacted_fields
+        content {
+          data = field_to_match.value.data
+          type = field_to_match.value.type
+        }
+      }
+    }
+  }
+
   rules {
     action {
       type = "BLOCK"

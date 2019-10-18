@@ -12,7 +12,7 @@ resource "aws_wafregional_web_acl" "wafregional_acl" {
     redacted_fields {
       dynamic "field_to_match" {
         for_each = var.log_firehose_redacted_fields
-        content { 
+        content {
           data = field_to_match.value.data
           type = field_to_match.value.type
         }
