@@ -33,3 +33,12 @@ admin_remote_ipset = [
     type  = "IPV4"
   },
 ]
+
+log_firehose_arn = "arn:aws:firehose:us-east-1:xxxxxxx:deliverystream/aws-waf-logs-xxx"
+
+log_firehose_redacted_fields = [
+  {
+    data = "Authorization"
+    type = "HEADER"
+  }
+]
